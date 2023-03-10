@@ -6,7 +6,7 @@
 
 1. What Is “The Shell”?
 2. Navigation
-3.Looking Around
+3. Looking Around
 4. A Guided Tour
 5. Manipulating Files
 6. Working With Commands
