@@ -5,17 +5,17 @@
 
 # man or help:
 
-chmod
-sudo
-su
-chown
-chgrp
-id
-groups
-whoami
-adduser
-useradd
-addgroup
+1. chmod
+2. sudo
+3. su
+4. chown
+5. chgrp
+6. id
+7. groups
+8. whoami
+9. adduser
+10. useradd
+11. addgroup
 
 # Learning Objectives
 At the end of this project, you are expected to be able to <a href='https://fs.blog/feynman-learning-technique/?fbclid=IwAR2K5_BGPVo0QjJXkOIIqNsqcXK4lTskPWJvA0asKQIGtCPWaQBdKmj1Ztg'>explain to anyone</a>, without the help of Google:
