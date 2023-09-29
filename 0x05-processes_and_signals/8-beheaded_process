@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Kill Highlander
+
+pkill -f 7-highlander 
