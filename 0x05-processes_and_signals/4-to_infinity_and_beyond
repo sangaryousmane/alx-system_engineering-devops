@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # List to infinity after every 2s
 
-while true
+while true;
 do
-echo "infinity and beyond"
-sleep 2
+	echo "To infinity and beyond"
+	sleep 2
 done
