@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Handles the name and PID of bash
+pgrep -l bash
