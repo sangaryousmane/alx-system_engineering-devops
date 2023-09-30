@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# Create a file if not exist
+# Populate it with the current PID
+# Print echo I hate the kill command on SIGQUIT or SIGTERM
+# Print Why you no love me? on SIGINT
+
+fileName="/var/run/myscript.pid"
+
+if [ ! -e $fileName ]; then
+	touch "$fileName"
+fi
+
+sleep 2 &
+
+echo $$ >> "$fileName"
+
+trap '"echo I hate the kill command"; rm "$fileName"; exit;' SIGQUIT SIGTERM
+
+trap "Y U no love me?!" SIGINT
+
+while true
+do
+	echo "To infinity and beyond"
+	sleep 2
+done
