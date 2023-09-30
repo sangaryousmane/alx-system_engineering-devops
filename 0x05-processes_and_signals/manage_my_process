@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Manage my process
+
+fileName="/tmp/my_process"
+
+if [ ! -e $fileName ]; then
+       touch "$fileName"
+fi
+
+while true
+do
+	echo "I am alive!" >> "$fileName"
+	sleep 2
+done
