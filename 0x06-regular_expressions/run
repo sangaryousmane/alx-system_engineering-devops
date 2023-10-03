@@ -1,3 +1,4 @@
 #!/bin/env bash
+read script
 read message
-chmod +x *.rb; git add .; git commit -m "$message"; git push
+chmod +x *.$script; git add .; git commit -m "$message"; git push
