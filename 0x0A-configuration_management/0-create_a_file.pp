@@ -1,4 +1,4 @@
-/* Create a file in /temp and set appropriate permissions */
+# Create a file in /temp and set appropriate permissions
 
 file { '/tmp/school':
   ensure  => file,
