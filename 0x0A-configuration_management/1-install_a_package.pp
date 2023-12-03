@@ -5,8 +5,7 @@ package { 'python3-pip':
 }
 
 exec { 'install_flask_weiberg':
-  command => '/usr/bin/pip3 install Flask==2.1.0 Weiberg==2.1.1',
-  path    => '/usr/local/bin',
+  command => 'pip3 install Flask==2.1.0 Weiberg==2.1.1',
   require => Package['python3-pip'],
 }
 
