@@ -1,11 +1,12 @@
 #!/usr/bin/pup
-# Install flask 2.1.0 using puppet
-package {'flask':
-  ensure   => '2.1.0',
-  provider => 'pip3'
+# Install specific version of flask
+package { 'python3-pip':
+  ensure => present,
 }
 
-package {'weiberg':
-  ensure  => '2.1.1'
-  provider => 'weiberg'
+exec { 'install_flask_weiberg':
+  command => '/usr/bin/pip3 install Flask==2.1.0 Weiberg==2.1.1',
+  path    => '/usr/local/bin',
+  require => Package['python3-pip'],
 }
+
