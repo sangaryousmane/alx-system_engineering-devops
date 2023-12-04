@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# install load balancer
+# install load balancer on lb-01
 
 # colors
 blue='\e[1;34m'
