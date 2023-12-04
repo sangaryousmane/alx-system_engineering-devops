@@ -45,14 +45,12 @@ frontend th3gr00t-tech-frontend
 
 backend th3gr00t-tech-backend
     balance roundrobin
-    server 453-web-01 35.243.128.200:80 check
-    server 453-web-02 3.239.120.96:80 check
+    server 020-web-01 34.232.69.189:80 check
+    server 453-web-02 54.83.226.36:80 check
 "
 
-# shellcheck disable=SC2154
 echo "$server_config" | sudo dd status=none of=/etc/haproxy/haproxy.cfg
 
-# enable haproxy to be started by init script
 echo "ENABLED=1" | sudo dd status=none of=/etc/default/haproxy
 
 if [ "$(pgrep -c haproxy)" -le 0 ]; then
