@@ -39,11 +39,11 @@ defaults
   timeout server 15s
   timeout http-request 10s
 
-frontend th3gr00t-tech-frontend
+frontend codewithous-client-side
     bind *:80
-    default_backend th3gr00t-tech-backend
+    default_backend codewithous-server-side
 
-backend th3gr00t-tech-backend
+backend codewithous-server-side
     balance roundrobin
     server 020-web-01 34.232.69.189:80 check
     server 453-web-02 54.83.226.36:80 check
