@@ -8,28 +8,11 @@ defaults
 
 frontend ous-frontend
     bind *:80
-    default_backend ous-backend
-
-backend ous-backend
-    balance roundrobin
-    server 384020-web-01 34.232.69.189:80 check
-    server 384020-web-02 54.83.226.36:80 check
-
-ubuntu@384020-lb-01:~$
-ubuntu@384020-lb-01:~$ sudo vi /etc/haproxy/haproxy.cfg
-  mode http
-  timeout client 15s
-  timeout connect 10s
-  timeout server 15s
-  timeout http-request 10s
-
-frontend ous-frontend
-    bind *:80
     http-request add-header X-Forwarded-Proto http
     default_backend ous-backend
 
-frontend ous-frontend
-    bind   0.0.0.0:443 ssl crt /etc/letsencrypt/archive/www.codewithous.tech/www.codewithous.tech.pem
+frontend ous-frontend-https
+    bind   0.0.0.0:443 ssl crt /etc/letsencrypt/live/www.codewithous.tech/fullchain.pem
     http-request add-header X-Forwarded-Proto https
     acl    letsencrypt-acl path_beg /.well-known/acme-challenge/
     use_backend letsencrypt-backend if letsencrypt-acl
@@ -43,3 +26,4 @@ backend ous-backend
 
 backend letsencrypt-backend
     server letsencrypt 127.0.0.1:54321
+
