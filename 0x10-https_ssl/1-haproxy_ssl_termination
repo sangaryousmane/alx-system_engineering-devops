@@ -1,4 +1,3 @@
-
 defaults
   mode http
   timeout client 15s
@@ -8,11 +7,10 @@ defaults
 
 frontend ous-frontend
     bind *:80
-    http-request add-header X-Forwarded-Proto http
     default_backend ous-backend
 
 frontend ous-frontend-https
-    bind   0.0.0.0:443 ssl crt /etc/letsencrypt/live/www.codewithous.tech/fullchain.pem
+    bind   *:443 ssl crt /etc/letsencrypt/live/www.codewithous.tech/fullchain.pem
     http-request add-header X-Forwarded-Proto https
     acl    letsencrypt-acl path_beg /.well-known/acme-challenge/
     use_backend letsencrypt-backend if letsencrypt-acl
@@ -26,4 +24,3 @@ backend ous-backend
 
 backend letsencrypt-backend
     server letsencrypt 127.0.0.1:54321
-
