@@ -29,9 +29,8 @@ if __name__ == '__main__':
                     } for task in todos
                     ]
             all_employees_data[employee_id] = task_data
-           
             filename = "todo_all_employees.json"
-            with open (filename, "w") as json_file:
+            with open(filename, "w") as json_file:
                 json.dump(all_employees_data, json_file, indent=4)
     except RequestException as e:
         print(e.response)
