@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ Export data to csv
 """
-import csv
+from csv import DictWriter, QUOTE_ALL
 from requests import get
 from sys import argv
 
@@ -15,12 +15,15 @@ if __name__ == '__main__':
     username = get(f'{base_url}/{employee_id}').json()
     file_name = "{}.csv".format(employee_id)
 
-    with open(file_name, "w", newline="") as to_file:
-        csv_writer = csv.writer(to_file)
+    todo_list = []
+    for todo in todos:
+        todo_dict = {}
+        todo_dict.update({"user_ID": employee_id, "username": username,
+                          "completed": todo["completed"],
+                          "task": todo["title"]})
+        todo_list.append(todo_dict)
 
-        for task in todos:
-            csv_writer.writerow([
-                employee_id, username,
-                "True" if task["completed"] else "False",
-                task["title"]
-                ])
+    with open(file_name, "w", newline="") as to_file:
+        header = ["user_ID", "username", "completed", "task"]
+        writer = DictWriter(to_file, fieldnames=header, quoting=QUOTE_ALL)
+        writer.writerows(todo_list)
