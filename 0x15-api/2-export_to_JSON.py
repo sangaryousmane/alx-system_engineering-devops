@@ -15,7 +15,7 @@ if __name__ == '__main__':
 
     if employee_name and todos:
         JSON_DATA = {
-                employee_id : [{
+                employee_id: [{
                     "task": task["title"],
                     "completed": task["completed"],
                     "username": employee_name
