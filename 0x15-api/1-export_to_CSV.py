@@ -18,7 +18,8 @@ if __name__ == '__main__':
     todo_list = []
     for todo in todos:
         todo_dict = {}
-        todo_dict.update({"user_ID": employee_id, "username": username['username'],
+        todo_dict.update({"user_ID": employee_id,
+                          "username": username['username'],
                           "completed": todo["completed"],
                           "task": todo["title"]})
         todo_list.append(todo_dict)
