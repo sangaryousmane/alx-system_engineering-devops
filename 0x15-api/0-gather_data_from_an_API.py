@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """ Get employees data from an API
 """
-from requests import get
 from requests.exceptions import RequestException
+from requests import get
 from sys import argv
 
 
@@ -29,7 +29,7 @@ if __name__ == '__main__':
     name, todos = get_data_from_api(employee_id)
     completed_task = len([todo for todo in todos if todo.get("completed")])
     todo_len = len(todos)
-    print(f"Employee {name} is done with tasks({completed_task}/{todo_len})")
+    print(f"Employee {name} is done with tasks({completed_task}/{todo_len}):")
 
     for todo in todos:
         if todo.get("completed"):
