@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-# Get employees data from an API
+""" Get employees data from an API
+"""
 from sys import argv
 from requests import get
 from requests.exceptions import RequestException
