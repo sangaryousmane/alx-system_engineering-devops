@@ -1,0 +1,17 @@
+#!/usr/bin/python3
+import platform
+import sys
+
+def generate_user_agent():
+    # Get information about the system and Python version
+    system_info = platform.system()
+    python_version = sys.version.split()[0]
+    
+    # Customize your User-Agent based on your application
+    user_agent = f"api-advance/{python_version} ({system_info}; {platform.machine()})"
+    
+    return user_agent
+
+# Example usage:
+custom_user_agent = generate_user_agent()
+print("Custom User-Agent:", custom_user_agent)
